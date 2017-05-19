@@ -1,5 +1,6 @@
 import "./extend";
 import * as mqtt from "mqtt";
+import { Eight } from "./Eight";
 
 let client = mqtt.connect("wss://mbltest01.mqtt.iot.gz.baidubce.com:8884/mqtt", {
     username: "mbltest01/body",
@@ -31,15 +32,15 @@ client.on("connect", (connack) => {
         //console.log(JSON.stringify(granted));
 
         if ((typeof err === "undefined" || err === null) && granted.some(value => value.topic === "body/#" && value.qos !== 128)) {
-            let data: any = {
+            let iAm: Eight.Inbound.IAmParameter = {
                 who: "body",
                 whoAmI: "body",
                 when: new Date().yyyyMMddHHmmss()
             };
 
-            console.log("toEight/i.am" + " => " + JSON.stringify(data));
+            console.log("toEight/i.am" + " => " + JSON.stringify(iAm));
 
-            client.publish("toEight/i.am", JSON.stringify(data), (err) => {
+            client.publish("toEight/i.am", JSON.stringify(iAm), (err) => {
                 //console.log("publish");
                 //console.log(JSON.stringify(err));
             });
