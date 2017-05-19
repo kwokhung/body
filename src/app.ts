@@ -38,7 +38,7 @@ client.on("connect", (connack) => {
         //console.log(JSON.stringify(message));
         //console.log(JSON.stringify(packet));
 
-        console.log(topic + ": " + message.toString());
+        console.log(topic + " <= " + message.toString());
     });
 
     client.subscribe("fromEight/#", (err, granted) => {
@@ -59,7 +59,7 @@ client.on("connect", (connack) => {
                 when: new Date().yyyyMMddHHmmss()
             };
 
-            console.log("toEight/i.am" + ": " + JSON.stringify(data));
+            console.log("toEight/i.am" + " => " + JSON.stringify(data));
 
             client.publish("toEight/i.am", JSON.stringify(data), (err) => {
                 //console.log("publish");
