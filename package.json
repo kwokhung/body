@@ -1,0 +1,27 @@
+{
+  "name": "body",
+  "version": "1.0.0",
+  "description": "echo \"# body\" >> README.md git init git add README.md git commit -m \"first commit\" git remote add origin https://github.com/kwokhung/body.git git push -u origin master",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwokhung/body.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwokhung/body/issues"
+  },
+  "homepage": "https://github.com/kwokhung/body#readme",
+  "devDependencies": {
+    "@types/mqtt": "0.0.34",
+    "@types/node": "^7.0.18"
+  },
+  "dependencies": {
+    "mqtt": "^2.7.2"
+  }
+}
