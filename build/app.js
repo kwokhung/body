@@ -38,4 +38,15 @@ client.on("connect", function (connack) {
             });
         }
     });
+    setInterval(function () {
+        var heartbeat = {
+            who: "body",
+            when: new Date().yyyyMMddHHmmss()
+        };
+        console.log("toEight/heartbeat" + " => " + JSON.stringify(heartbeat));
+        client.publish("toEight/heartbeat", JSON.stringify(heartbeat), function (err) {
+            //console.log("publish");
+            //console.log(JSON.stringify(err));
+        });
+    }, 1000);
 });
