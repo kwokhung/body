@@ -31,8 +31,8 @@ client.on("connect", function (connack) {
                 whoAmI: "body",
                 when: new Date().yyyyMMddHHmmss()
             };
-            console.log("toEight/i.am" + " => " + JSON.stringify(iAm));
-            client.publish("toEight/i.am", JSON.stringify(iAm), function (err) {
+            console.log("toEight/iAm" + " => " + JSON.stringify(iAm));
+            client.publish("toEight/iAm", JSON.stringify(iAm), function (err) {
                 //console.log("publish");
                 //console.log(JSON.stringify(err));
             });
