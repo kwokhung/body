@@ -48,5 +48,5 @@ client.on("connect", function (connack) {
             //console.log("publish");
             //console.log(JSON.stringify(err));
         });
-    }, 1000);
+    }, 60000);
 });

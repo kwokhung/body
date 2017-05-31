@@ -1,4 +1,11 @@
 export namespace EightInterface {
+    export namespace Store {
+        export interface Resource {
+            who: string;
+            when: string;
+        }
+    }
+
     export namespace Inbound {
         export interface IAmParameter {
             who: string;
