@@ -1,6 +1,6 @@
 import "./extend";
 import * as mqtt from "mqtt";
-import { Eight } from "./Eight";
+import { EightInterface } from "./EightInterface";
 
 let client = mqtt.connect("wss://mbltest01.mqtt.iot.gz.baidubce.com:8884/mqtt", {
     username: "mbltest01/body",
@@ -32,7 +32,7 @@ client.on("connect", (connack) => {
         //console.log(JSON.stringify(granted));
 
         if ((typeof err === "undefined" || err === null) && granted.some(value => value.topic === "body/#" && value.qos !== 128)) {
-            let iAm: Eight.Inbound.IAmParameter = {
+            let iAm: EightInterface.Inbound.IAmParameter = {
                 who: "body",
                 whoAmI: "body",
                 when: new Date().yyyyMMddHHmmss()
@@ -48,7 +48,7 @@ client.on("connect", (connack) => {
     });
 
     setInterval(() => {
-        let heartbeat: Eight.Inbound.HeartbeatParameter = {
+        let heartbeat: EightInterface.Inbound.HeartbeatParameter = {
             who: "body",
             when: new Date().yyyyMMddHHmmss()
         };
